@@ -3,3 +3,4 @@ dist
 node_modules
 **/__coverage__
 *.log
+*.css.d.ts
