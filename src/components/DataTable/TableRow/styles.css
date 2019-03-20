@@ -1,0 +1,25 @@
+.controls {
+    opacity: 0
+}
+
+.controls.editable:hover {
+    opacity: 1
+}
+
+.controlButton {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.controlButton:hover {
+    transform: scale(1.1);
+}
+
+tr.row:hover > .controls {
+    opacity: 1;
+}
+
+tr.row.editable:first-child > .controls {
+    opacity: 1;
+}
