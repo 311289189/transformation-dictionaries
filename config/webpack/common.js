@@ -15,7 +15,14 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', { loader: 'css-loader', options: { importLoaders: 1 } }],
+        use: ['style-loader', 'css-modules-typescript-loader', {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 1,
+            modules: true,
+            localIdentName: '[name]__[local]--[hash:base64:5]',
+          }
+        }],
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,

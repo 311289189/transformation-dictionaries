@@ -3,6 +3,7 @@
         "baseUrl": ".",
         "forceConsistentCasingInFileNames": true,
         "jsx": "react",
+        "experimentalDecorators": true,
         "lib": ["es5", "es6", "dom"],
         "module": "commonjs",
         "noImplicitAny": true,
@@ -13,14 +14,21 @@
         "sourceMap": true,
         "strictNullChecks": true,
         "suppressImplicitAnyIndexErrors": true,
-        "target": "es5"
+        "target": "es5",
+        "types": [
+            "node",
+            "webpack-env"
+        ],
+        "typeRoots" : ["./src/typings"]
     },
     "include": [
         "./src/**/*"
     ],
     "exclude": [
         "node_modules",
+        "**/*test.tsx",
         "**/*.test.tsx",
+        "**/*test.ts",
         "**/*.test.ts"
     ],
     "awesomeTypescriptLoaderOptions": {
