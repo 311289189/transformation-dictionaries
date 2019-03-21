@@ -19,25 +19,35 @@ interface Props {
 }
 
 const TableRow = ({ store, dictionaryItem, editable, index }: Props) => {
+    const isFirstRow = index === 0
+
     const [cacheItem, setCacheItem] = React.useState(dictionaryItem)
     const [inputs, setInput] = React.useState(dictionaryItem)
 
     const fromInput = React.useRef<HTMLInputElement>(null)
     const toInput = React.useRef<HTMLInputElement>(null)
 
-    const clearLocalValidations = () => {
+    const runLocalInputValidations = () => {
+        fromInput.current && fromInput.current.reportValidity()
+        toInput.current && toInput.current.reportValidity()
+    }
+
+    const clearLocalInputValidations = () => {
         fromInput.current && fromInput.current.setCustomValidity('')
         toInput.current && toInput.current.setCustomValidity('')
     }
 
-    const clearInputs = () => setInput({ from: '', to: '' })
-    const revertFrom = () => {
+    const clearLocalInputFields = () => setInput({ from: '', to: '' })
+
+    const resetLocalInputFrom = () => {
         store.clearValidation()
-        index !== 0 && setInput({ from: cacheItem.from, to: inputs.to })
+        !isFirstRow && setInput({ from: cacheItem.from, to: inputs.to })
     }
 
-    const revertTo = () =>
-        index !== 0 && setInput({ from: inputs.from, to: cacheItem.to })
+    const resetLocalInputTo = () => {
+        store.clearValidation()
+        !isFirstRow && setInput({ from: inputs.from, to: cacheItem.to })
+    }
 
     React.useEffect(() => {
         if (JSON.stringify(cacheItem) !== JSON.stringify(dictionaryItem)) {
@@ -51,23 +61,24 @@ const TableRow = ({ store, dictionaryItem, editable, index }: Props) => {
     const submitDictionaryItem = (e: FormEvent) => {
         e.preventDefault()
         store.clearValidation()
-        fromInput.current && fromInput.current.reportValidity()
-        toInput.current && toInput.current.reportValidity()
+        runLocalInputValidations()
         if (store.submitDictionaryItem(inputs, cacheItem)) {
-            clearLocalValidations()
-            clearInputs()
+            clearLocalInputValidations()
+            clearLocalInputFields()
         }
     }
 
     const removeDictionaryItem = () => {
-        if (index === 0) {
-            clearInputs()
+        if (isFirstRow) {
+            clearLocalInputFields()
         } else {
             store.removeDictionaryItem(inputs)
         }
     }
 
-    const checkDuplicates = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const checkLocalInputToForDuplicates = (
+        e: React.ChangeEvent<HTMLInputElement>
+    ) => {
         if (store.availableDictionaries[e.target.value]) {
             e.target.setCustomValidity(
                 `Duplicate 'To' fields are not allowed: value '${
@@ -79,16 +90,18 @@ const TableRow = ({ store, dictionaryItem, editable, index }: Props) => {
         }
     }
 
-    const fromChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleLocalInputToChange = (
+        e: React.ChangeEvent<HTMLInputElement>
+    ) => {
         store.clearValidation()
-        checkDuplicates(e)
+        checkLocalInputToForDuplicates(e)
         setInput({
             from: e.target.value,
             to: inputs.to
         })
     }
 
-    const duplicateKeyErrorExists = !!store.validationErrors[
+    const localInputToIsDuplicate = !!store.validationErrors[
         Validation.KEY_ALREADY_EXISTS
     ][inputs.from]
 
@@ -103,15 +116,15 @@ const TableRow = ({ store, dictionaryItem, editable, index }: Props) => {
                     <input
                         className={classnames({
                             [styles.inputValidationError]:
-                                editable && duplicateKeyErrorExists
+                                editable && localInputToIsDuplicate
                         })}
                         disabled={!editable}
                         required
                         ref={fromInput}
-                        onBlur={revertFrom}
+                        onBlur={resetLocalInputFrom}
                         type="text"
                         value={inputs.from}
-                        onChange={fromChange}
+                        onChange={handleLocalInputToChange}
                     />
                 </form>
             </td>
@@ -121,7 +134,7 @@ const TableRow = ({ store, dictionaryItem, editable, index }: Props) => {
                         disabled={!editable}
                         required
                         ref={toInput}
-                        onBlur={revertTo}
+                        onBlur={resetLocalInputTo}
                         type="text"
                         value={inputs.to}
                         onChange={e =>
