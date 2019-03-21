@@ -11,7 +11,7 @@ exports[`DataTable Component In edit mode should match snapshot 1`] = `
       <td>
         <form>
           <input
-            class=""
+            class="inputCell"
             required=""
             type="text"
             value=""
@@ -21,6 +21,7 @@ exports[`DataTable Component In edit mode should match snapshot 1`] = `
       <td>
         <form>
           <input
+            class="inputCell"
             required=""
             type="text"
             value=""
@@ -57,7 +58,7 @@ exports[`DataTable Component In edit mode, with items should match snapshot 1`] 
       <td>
         <form>
           <input
-            class=""
+            class="inputCell"
             required=""
             type="text"
             value=""
@@ -67,6 +68,7 @@ exports[`DataTable Component In edit mode, with items should match snapshot 1`] 
       <td>
         <form>
           <input
+            class="inputCell"
             required=""
             type="text"
             value=""
@@ -94,7 +96,7 @@ exports[`DataTable Component In edit mode, with items should match snapshot 1`] 
       <td>
         <form>
           <input
-            class=""
+            class="inputCell"
             required=""
             type="text"
             value="test"
@@ -104,6 +106,7 @@ exports[`DataTable Component In edit mode, with items should match snapshot 1`] 
       <td>
         <form>
           <input
+            class="inputCell"
             required=""
             type="text"
             value="fixture"
@@ -131,7 +134,7 @@ exports[`DataTable Component In edit mode, with items should match snapshot 1`] 
       <td>
         <form>
           <input
-            class=""
+            class="inputCell"
             required=""
             type="text"
             value="other"
@@ -141,6 +144,7 @@ exports[`DataTable Component In edit mode, with items should match snapshot 1`] 
       <td>
         <form>
           <input
+            class="inputCell"
             required=""
             type="text"
             value="fixture"

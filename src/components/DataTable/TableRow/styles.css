@@ -28,3 +28,7 @@ tr.row.editable:first-child > .controls {
 input.inputValidationError {
     border: 1px solid #cd5c5c;
 }
+
+input.inputCell:required {
+   box-shadow: none;
+}

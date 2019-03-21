@@ -114,7 +114,7 @@ const TableRow = ({ store, dictionaryItem, editable, index }: Props) => {
             <td>
                 <form onSubmit={submitDictionaryItem}>
                     <input
-                        className={classnames({
+                        className={classnames(styles.inputCell, {
                             [styles.inputValidationError]:
                                 editable && localInputToIsDuplicate
                         })}
@@ -131,6 +131,7 @@ const TableRow = ({ store, dictionaryItem, editable, index }: Props) => {
             <td>
                 <form onSubmit={submitDictionaryItem}>
                     <input
+                        className={styles.inputCell}
                         disabled={!editable}
                         required
                         ref={toInput}

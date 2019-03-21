@@ -27,7 +27,7 @@ exports[`App 1`] = `
           <td>
             <form>
               <input
-                class=""
+                class="inputCell"
                 required=""
                 type="text"
                 value=""
@@ -37,6 +37,7 @@ exports[`App 1`] = `
           <td>
             <form>
               <input
+                class="inputCell"
                 required=""
                 type="text"
                 value=""
