@@ -37,6 +37,7 @@ const DataTable = ({ store, editable = false }: Props) => {
                         dictionaryItem={item}
                         editable={editable}
                         key={i}
+                        index={i}
                     />
                 ))}
             </tbody>

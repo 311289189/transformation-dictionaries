@@ -23,3 +23,7 @@ tr.row:hover > .controls {
 tr.row.editable:first-child > .controls {
     opacity: 1;
 }
+
+input.inputValidationError {
+    border: 1px solid #cd5c5c;
+}
