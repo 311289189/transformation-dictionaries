@@ -1,9 +1,10 @@
 .controls {
-    opacity: 0
+    opacity: 0;
+    display: inline-flex;
 }
 
 .controls.editable:hover {
-    opacity: 1
+    opacity: 1;
 }
 
 .controlButton {
