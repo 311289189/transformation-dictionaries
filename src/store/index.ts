@@ -1,4 +1,4 @@
-import { action, get, observable, remove, set } from 'mobx'
+import { action, get, IObservableObject, observable, remove, set } from 'mobx'
 import { DictionaryMapping } from '../components/DataTable'
 
 export type DictionaryItem = Record<string, string>
@@ -8,7 +8,7 @@ export enum Validation {
 }
 
 export interface IStore {
-    availableDictionaries: any
+    availableDictionaries: IObservableObject
     validationErrors: { [key in Validation]: DictionaryItem }
     submitDictionaryItem(
         item: DictionaryMapping,
