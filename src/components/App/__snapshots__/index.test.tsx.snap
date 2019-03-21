@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App 1`] = `
+<main>
+  <section>
+    <h1>
+      Transformation Dictionaries
+    </h1>
+  </section>
+  <section>
+    <h3>
+      Dictionary
+    </h3>
+    <span
+      class="undefined"
+    >
+      <img
+        alt="Submit"
+        src="[object Object]"
+      />
+      <img
+        alt="Delete"
+        src="[object Object]"
+      />
+    </span>
+    <table
+      class=""
+    >
+      <tbody>
+        <tr
+          class="undefined"
+        >
+          <td>
+            <input
+              type="text"
+              value=""
+            />
+          </td>
+          <td>
+            <input
+              type="text"
+              value=""
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section>
+    <h3>
+      Results
+    </h3>
+    <table
+      class=""
+    >
+      <tbody />
+    </table>
+  </section>
+</main>
+`;

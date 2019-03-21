@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as styles from './styles.css'
-import * as classnames from 'classnames'
+import classnames from 'classnames'
 
 import { IStore } from '../../store'
 import { observer } from 'mobx-react-lite'
@@ -17,7 +17,7 @@ export interface DictionaryMapping {
     to: string
 }
 
-const DataTable = observer(({ store, editable = false }: Props) => {
+const DataTable = ({ store, editable = false }: Props) => {
     const dictionaries: DictionaryMapping[] = Object.keys(
         store.availableDictionaries
     ).map(key => ({
@@ -42,8 +42,8 @@ const DataTable = observer(({ store, editable = false }: Props) => {
             </tbody>
         </table>
     )
-})
+}
 
-export default inject('store')(DataTable) as React.FunctionComponent<
+export default inject('store')(observer(DataTable)) as React.FunctionComponent<
     Omit<Props, 'store'>
 >

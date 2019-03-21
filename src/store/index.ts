@@ -1,25 +1,37 @@
-import { action, observable } from 'mobx'
+import { action, get, observable, remove, set } from 'mobx'
+import { DictionaryMapping } from '../components/DataTable'
 
-export type DictionaryLookup = Record<string, string>
+export type DictionaryItem = Record<string, string>
 
 export interface IStore {
-    availableDictionaries: DictionaryLookup
+    availableDictionaries: any
+    submitDictionaryItem(item: DictionaryMapping): void
+    removeDictionaryItem(item: DictionaryMapping): void
 }
 
-class Store implements IStore {
-    @observable availableDictionaries = {}
+export class Store implements IStore {
+    @observable availableDictionaries = observable({})
 
-    @action.bound
-    public addDictionaryItem(newItem: DictionaryLookup) {
+    @action
+    public submitDictionaryItem(item: DictionaryMapping) {
+        set(this.availableDictionaries, item.from, item.to)
+    }
+
+    @action
+    public addDictionaryItem(newItem: DictionaryItem) {
         this.availableDictionaries = {
             ...this.availableDictionaries,
             ...newItem
         }
     }
 
-    @action.bound
-    public removeDictionaryItem(itemKey: string) {
-        delete this.availableDictionaries[itemKey]
+    @action
+    public removeDictionaryItem(item: DictionaryMapping) {
+        const thing = get(this.availableDictionaries, item.from)
+
+        if (thing) {
+            remove(this.availableDictionaries, item.from)
+        }
     }
 }
 
