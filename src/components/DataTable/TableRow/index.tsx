@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as styles from './styles.css'
+import styles from './styles.css'
 import { observer } from 'mobx-react-lite'
 import { inject } from 'mobx-react'
 import { IStore, Validation } from '../../../store'

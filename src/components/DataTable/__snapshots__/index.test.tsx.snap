@@ -1,142 +1,174 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataTable Component In edit mode should match snapshot 1`] = `
-Array [
-  <span
-    class="undefined"
-  >
-    <img
-      alt="Submit"
-      src="[object Object]"
-    />
-    <img
-      alt="Delete"
-      src="[object Object]"
-    />
-  </span>,
-  <table
-    class=""
-  >
-    <tbody>
-      <tr
-        class="undefined"
+<table
+  class="dataTable"
+>
+  <tbody>
+    <tr
+      class="row editable"
+    >
+      <td>
+        <form>
+          <input
+            class=""
+            required=""
+            type="text"
+            value=""
+          />
+        </form>
+      </td>
+      <td>
+        <form>
+          <input
+            required=""
+            type="text"
+            value=""
+          />
+        </form>
+      </td>
+      <td
+        class="controls editable"
       >
-        <td>
-          <input
-            type="text"
-            value=""
-          />
-        </td>
-        <td>
-          <input
-            type="text"
-            value=""
-          />
-        </td>
-      </tr>
-    </tbody>
-  </table>,
-]
+        <img
+          alt="Submit"
+          class="controlButton"
+          src="[object Object]"
+        />
+        <img
+          alt="Delete"
+          class="controlButton"
+          src="[object Object]"
+        />
+      </td>
+    </tr>
+  </tbody>
+</table>
 `;
 
 exports[`DataTable Component In edit mode, with items should match snapshot 1`] = `
-Array [
-  <span
-    class="undefined"
-  >
-    <img
-      alt="Submit"
-      src="[object Object]"
-    />
-    <img
-      alt="Delete"
-      src="[object Object]"
-    />
-  </span>,
-  <span
-    class="undefined"
-  >
-    <img
-      alt="Submit"
-      src="[object Object]"
-    />
-    <img
-      alt="Delete"
-      src="[object Object]"
-    />
-  </span>,
-  <span
-    class="undefined"
-  >
-    <img
-      alt="Submit"
-      src="[object Object]"
-    />
-    <img
-      alt="Delete"
-      src="[object Object]"
-    />
-  </span>,
-  <table
-    class=""
-  >
-    <tbody>
-      <tr
-        class="undefined"
-      >
-        <td>
+<table
+  class="dataTable"
+>
+  <tbody>
+    <tr
+      class="row editable"
+    >
+      <td>
+        <form>
           <input
+            class=""
+            required=""
             type="text"
             value=""
           />
-        </td>
-        <td>
+        </form>
+      </td>
+      <td>
+        <form>
           <input
+            required=""
             type="text"
             value=""
           />
-        </td>
-      </tr>
-      <tr
-        class="undefined"
+        </form>
+      </td>
+      <td
+        class="controls editable"
       >
-        <td>
+        <img
+          alt="Submit"
+          class="controlButton"
+          src="[object Object]"
+        />
+        <img
+          alt="Delete"
+          class="controlButton"
+          src="[object Object]"
+        />
+      </td>
+    </tr>
+    <tr
+      class="row editable"
+    >
+      <td>
+        <form>
           <input
+            class=""
+            required=""
             type="text"
             value="test"
           />
-        </td>
-        <td>
+        </form>
+      </td>
+      <td>
+        <form>
           <input
+            required=""
             type="text"
             value="fixture"
           />
-        </td>
-      </tr>
-      <tr
-        class="undefined"
+        </form>
+      </td>
+      <td
+        class="controls editable"
       >
-        <td>
+        <img
+          alt="Submit"
+          class="controlButton"
+          src="[object Object]"
+        />
+        <img
+          alt="Delete"
+          class="controlButton"
+          src="[object Object]"
+        />
+      </td>
+    </tr>
+    <tr
+      class="row editable"
+    >
+      <td>
+        <form>
           <input
+            class=""
+            required=""
             type="text"
             value="other"
           />
-        </td>
-        <td>
+        </form>
+      </td>
+      <td>
+        <form>
           <input
+            required=""
             type="text"
             value="fixture"
           />
-        </td>
-      </tr>
-    </tbody>
-  </table>,
-]
+        </form>
+      </td>
+      <td
+        class="controls editable"
+      >
+        <img
+          alt="Submit"
+          class="controlButton"
+          src="[object Object]"
+        />
+        <img
+          alt="Delete"
+          class="controlButton"
+          src="[object Object]"
+        />
+      </td>
+    </tr>
+  </tbody>
+</table>
 `;
 
 exports[`DataTable Component In read-only mode should match snapshot 1`] = `
 <table
-  class=""
+  class="dataTable"
 >
   <tbody />
 </table>

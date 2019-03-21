@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App 1`] = `
-<main>
+<main
+  class="app"
+>
   <section>
     <h1>
       Transformation Dictionaries
@@ -11,47 +13,58 @@ exports[`App 1`] = `
     <h3>
       Dictionary
     </h3>
-    <span
-      class="undefined"
-    >
-      <img
-        alt="Submit"
-        src="[object Object]"
-      />
-      <img
-        alt="Delete"
-        src="[object Object]"
-      />
-    </span>
     <table
-      class=""
+      class="dataTable"
     >
       <tbody>
         <tr
-          class="undefined"
+          class="row editable"
         >
           <td>
-            <input
-              type="text"
-              value=""
-            />
+            <form>
+              <input
+                class=""
+                required=""
+                type="text"
+                value=""
+              />
+            </form>
           </td>
           <td>
-            <input
-              type="text"
-              value=""
+            <form>
+              <input
+                required=""
+                type="text"
+                value=""
+              />
+            </form>
+          </td>
+          <td
+            class="controls editable"
+          >
+            <img
+              alt="Submit"
+              class="controlButton"
+              src="[object Object]"
+            />
+            <img
+              alt="Delete"
+              class="controlButton"
+              src="[object Object]"
             />
           </td>
         </tr>
       </tbody>
     </table>
   </section>
-  <section>
+  <section
+    class="resultsArea"
+  >
     <h3>
       Results
     </h3>
     <table
-      class=""
+      class="dataTable"
     >
       <tbody />
     </table>

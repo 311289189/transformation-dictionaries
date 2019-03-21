@@ -3,7 +3,6 @@
   "coverageDirectory": "<rootDir>/test/__coverage__/",
   "setupFiles": [
     "<rootDir>/test/__mocks__/shim.js",
-    "<rootDir>/test/__mocks__/styleMock.js",
     "<rootDir>/test/jest.setup.js"
   ],
   "setupFilesAfterEnv": ["<rootDir>/node_modules/jest-enzyme/lib/index.js"],
