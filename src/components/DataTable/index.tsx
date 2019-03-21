@@ -40,6 +40,21 @@ const DataTable = ({ store, editable = false }: Props) => {
                         index={i}
                     />
                 ))}
+                {!dictionaries.length && (
+                    <tr className={styles.explainerText}>
+                        <td>
+                            <div>Nothing to display.</div>
+                            <br />
+                            <div>
+                                Add dictionary items using the cells above, all
+                                cells are WSYWYG and can be updated
+                                individually, use the green button or hit Enter
+                                to submit an entry. Use the red button to delete
+                                rows.
+                            </div>
+                        </td>
+                    </tr>
+                )}
             </tbody>
         </table>
     )

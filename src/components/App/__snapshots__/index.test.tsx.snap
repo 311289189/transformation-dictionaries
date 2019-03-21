@@ -4,12 +4,16 @@ exports[`App 1`] = `
 <main
   class="app"
 >
-  <section>
+  <section
+    class="section"
+  >
     <h1>
       Transformation Dictionaries
     </h1>
   </section>
-  <section>
+  <section
+    class="section"
+  >
     <h3>
       Dictionary
     </h3>
@@ -58,7 +62,7 @@ exports[`App 1`] = `
     </table>
   </section>
   <section
-    class="resultsArea"
+    class="resultsArea section"
   >
     <h3>
       Results
@@ -66,7 +70,21 @@ exports[`App 1`] = `
     <table
       class="dataTable"
     >
-      <tbody />
+      <tbody>
+        <tr
+          class="explainerText"
+        >
+          <td>
+            <div>
+              Nothing to display.
+            </div>
+            <br />
+            <div>
+              Add dictionary items using the cells above, all cells are WSYWYG and can be updated individually, use the green button or hit Enter to submit an entry. Use the red button to delete rows.
+            </div>
+          </td>
+        </tr>
+      </tbody>
     </table>
   </section>
 </main>
