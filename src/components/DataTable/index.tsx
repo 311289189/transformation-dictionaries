@@ -49,7 +49,7 @@ const DataTable = ({ store, editable = false }: Props) => {
                                 Add dictionary items using the cells above, all
                                 cells are WSYWYG and can be updated
                                 individually, use the green button or hit Enter
-                                to submit an entry. Use the red button to delete
+                                to submit rows. Use the red button to delete
                                 rows.
                             </div>
                         </td>
